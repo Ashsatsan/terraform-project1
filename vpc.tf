@@ -9,12 +9,18 @@ module "vpc" {
   public_subnets  = [var.CIDR_PUB1, var.CIDR_PUB2, var.CIDR_PUB3]
 
   enable_nat_gateway = true
+  single_nat_gateway = true
   enable_vpn_gateway = true
 
-
+  enable_dns_hostnames = true
+  enable_dns_support   = true
 
   tags = {
-    Terraform = "true"
+    Terraform   = "true"
     Environment = "dev"
+  }
+
+  vpc_tags = {
+    Name = var.VPC_NAME
   }
 }

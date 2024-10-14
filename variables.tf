@@ -3,7 +3,7 @@ variable "REGION" {
 }
 
 variable "AMIS" {
-  type = map
+  type = map(any)
   default = {
     us-east-2a = "ami-0b7fce1abbd71db35"
     us-east-2b = "ami-0b7fce1abbd798b35"
@@ -91,5 +91,5 @@ variable "ZONE3" {
 }
 
 variable "instance_count" {
-  default = 1  # no quotes, since it's a number
+  default = 1 # no quotes, since it's a number
 }
